@@ -23,7 +23,7 @@ class TrainedModel():
         print("Loaded model from disk")
 
         self.loaded_model.compile(
-            optimizer=keras.optimizers.Adam(1e-3),
+            optimizer=tf.keras.optimizers.Adam(1e-3),
             loss=self.strLoss,
             metrics=["accuracy"],
         )
@@ -33,10 +33,10 @@ class TrainedModel():
         fltFinalClassification = 0
         intFinalClassificationCount = 0
 
-        img = keras.preprocessing.image.load_img(
+        img = tf.keras.preprocessing.image.load_img(
             self.strImagePath, target_size=self.image_size
         )
-        img_array = keras.preprocessing.image.img_to_array(img)
+        img_array = tf.keras.preprocessing.image.img_to_array(img)
         img_array = tf.expand_dims(img_array, 0)  # Create batch axis
 
         predictions = self.loaded_model.predict(img_array, verbose = 0)
