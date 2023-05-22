@@ -69,6 +69,6 @@ imagePath = 'path\\to\\image\\for\\prediction'
 prediction = finalModel.predict(imagePath) # returns a string of the predicted class
 
 #Accuracy on Sample Set (when predicting on a sample set, make sure it follows the same folder structure as the dataset as shown above)
-samplesPath = 'C:\\Users\\suchi\\Dropbox (Sandipan.com)\\Creative\\RitiCode\\Garbage\\ImageSwiftTest\\samples'
+samplesPath = 'path\\to\\sample\\set'
 accuracy = finalModel.evaluate(samplesPath) # returns the accuracy of your model on the sample set
 ```
