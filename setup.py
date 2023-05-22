@@ -8,7 +8,7 @@ setup(
   author = 'Suchisrit Gangopadhyay',                  
   author_email = 'suchisrit@gmail.com',      
   url = 'https://github.com/Suchisrit/ImageSwift',   
-  download_url = 'https://github.com/Suchisrit/ImageSwift/archive/refs/tags/v0.1.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/Suchisrit/ImageSwift/archive/refs/tags/v0.2.tar.gz',    # I explain this later on
   keywords = ['CV', 'Image Recognition', 'AI', 'ML'],   
   install_requires=[            
           'tensorflow==2.3.0',
