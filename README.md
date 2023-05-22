@@ -20,13 +20,13 @@ Please set up your image recognition project directory in the following manner:
 
 ```
 ├── Project Directory
-    ├── dataset
-    │   ├── Class1 (each class directory should contain the images corresponding to that class)
-    │   ├── Class2
+    ├── dataset_name
+    │   ├── class1_name (each class directory should contain the images corresponding to that class)
+    │   ├── class2_name
     │   ├── .
     │   ├── .
     │   ├── .
-    │   └── ClassN
+    │   └── classN_name
     ├── train.py (see Training)
     ├── predict.py (see Predicting)
 ```
@@ -70,5 +70,5 @@ prediction = finalModel.predict(imagePath) # returns a string of the predicted c
 
 #Accuracy on Sample Set (when predicting on a sample set, make sure it follows the same folder structure as the dataset as shown above)
 samplesPath = 'C:\\Users\\suchi\\Dropbox (Sandipan.com)\\Creative\\RitiCode\\Garbage\\ImageSwiftTest\\samples'
-accuracy = finalModel.evaluate(samplesPath) # returns the accuracy of 
+accuracy = finalModel.evaluate(samplesPath) # returns the accuracy of your model on the sample set
 ```
