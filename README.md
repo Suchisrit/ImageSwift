@@ -18,6 +18,7 @@ The functions of ImageSwift are split into training on your dataset and then pre
 
 Please set up your image recognition project directory in the following manner:
 
+```
 ├── Project Directory
     ├── dataset
     │   ├── Class1 (each class directory should contain the images corresponding to that class)
@@ -28,6 +29,7 @@ Please set up your image recognition project directory in the following manner:
     │   └── ClassN
     ├── train.py (see Training)
     ├── predict.py (see Predicting)
+```
 
 ### Training
 
