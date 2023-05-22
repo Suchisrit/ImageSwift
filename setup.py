@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
   name = 'imageswift',         
   packages = ['imageswift'],   
-  version = '0.2',      
+  version = '0.3',      
   license='MIT',        
   description = 'Easily train an image recognition model on your own images.',   
   author = 'Suchisrit Gangopadhyay',                  
   author_email = 'suchisrit@gmail.com',      
   url = 'https://github.com/Suchisrit/ImageSwift',   
-  download_url = 'https://github.com/Suchisrit/ImageSwift/archive/refs/tags/v0.2.tar.gz',    # I explain this later on
+  download_url = 'https://github.com/Suchisrit/ImageSwift/archive/refs/tags/v0.3.tar.gz',  
   keywords = ['CV', 'Image Recognition', 'AI', 'ML'],   
   install_requires=[            
           'tensorflow==2.3.0',
