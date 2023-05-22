@@ -1,9 +1,5 @@
 import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-from keras.models import Sequential
-from keras.layers import Dense
-from keras.models import model_from_json
+from tensorflow.keras.models import model_from_json
 import os
 
 class TrainedModel():
