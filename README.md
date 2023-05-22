@@ -67,8 +67,14 @@ finalModel.loadAndCompile()
 #Single Prediction
 imagePath = 'path\\to\\image\\for\\prediction'
 prediction = finalModel.predict(imagePath) # returns a string of the predicted class
+print(prediction)
+```
 
+Use the code below to predict on a set of images instead of one singular image:
+
+```Python
 #Accuracy on Sample Set (when predicting on a sample set, make sure it follows the same folder structure as the dataset as shown above)
 samplesPath = 'path\\to\\sample\\set'
 accuracy = finalModel.evaluate(samplesPath) # returns the accuracy of your model on the sample set
+print(accuracy)
 ```
