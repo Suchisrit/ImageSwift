@@ -4,16 +4,69 @@ Easily train an image recognition model on your own images!
 
 ## Set Up
 
-Not done
+Please install in a virtual environment. The package requires a specific version of tensorflow.
+
+```sh
+$ pip install imageswift
+```
 
 ## Usage
 
 The functions of ImageSwift are split into training on your dataset and then predicting on any images you want.
 
+### Setting Up Your Dataset
+
+Please set up your image recognition project directory in the following manner:
+
+├── Project Directory
+    ├── dataset
+    │   ├── Class1 (each class directory should contain the images corresponding to that class)
+    │   ├── Class2
+    │   ├── .
+    │   ├── .
+    │   ├── .
+    │   └── ClassN
+    ├── train.py (see Training)
+    ├── predict.py (see Predicting)
+
 ### Training
 
-First, import...
+Here is an example of how to use ImageSwift to train an image recognition model:
 
 ```Python
 from imageswift import training
+
+projectPath = "path\\to\\project\\directory"
+dataset = "name_of_dataset_directory"
+
+model = training.ImageModel(projectPath, dataset, epochs=50, image_size=(150, 150), batch_size=32, validation_split=0.2)
+model.loadDatasets()
+model.finishModel()
+```
+
+The code above will save the the model and weights files to the project directory.
+
+This examples also shows the defaults for some training parameters: epochs, desired image size, batch size, and the percentage of your dataset to use for validation.
+
+### Predicting
+
+Here is an example of how to use ImageSwift to predict on images with the model you trained:
+
+```Python
+from imageswift import predicting
+
+modelPath = 'path\\to\\model'
+weightsPath = 'path\\to\\weights'
+datasetPath = "path\\to\\dataset"
+
+finalModel = predicting.TrainedModel(modelPath, weightsPath, datasetPath)
+finalModel.loadAndCompile()
+
+#Single Prediction
+imagePath = 'path\\to\\image\\for\\prediction'
+prediction = finalModel.predict(imagePath) # returns a string of the predicted class
+
+#Accuracy on Sample Set (when predicting on a sample set, make sure it follows the same folder structure as the dataset as shown above)
+samplesPath = 'C:\\Users\\suchi\\Dropbox (Sandipan.com)\\Creative\\RitiCode\\Garbage\\ImageSwiftTest\\samples'
+accuracy = finalModel.evaluate(samplesPath) # returns the accuracy of 
 ```
