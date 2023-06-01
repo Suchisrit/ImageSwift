@@ -42,8 +42,7 @@ projectPath = "path\\to\\project\\directory"
 dataset = "name_of_dataset_directory"
 
 model = training.ImageModel(projectPath, dataset, epochs=50, image_size=(150, 150), batch_size=32, validation_split=0.2, lr=1e-3)
-model.loadDatasets()
-model.finishModel()
+model.trainModel()
 ```
 
 The code above will save the the model and weights files to the project directory.

@@ -123,7 +123,8 @@ class ImageModel():
         ax.set_ylabel('Accuracy (Fraction)')
         
         plt.show()
-    def finishModel(self):
+    def trainModel(self):
+        self.loadDatasets()
         model = self.fnMakeModel()
 
         model.compile(
