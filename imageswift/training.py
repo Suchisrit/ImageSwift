@@ -12,7 +12,7 @@ from tensorflow.keras.applications import DenseNet201
 from tensorflow.keras.layers import Dropout, Dense, GlobalAveragePooling2D
 
 class ImageModel():
-    def __init__(self, strMainPath, strDataset, epochs=50, image_size=(150, 150), batch_size=32, validation_split=0.2):
+    def __init__(self, strMainPath, strDataset, epochs=50, image_size=(150, 150), batch_size=32, validation_split=0.2, lr=1e-3):
         self.strMainPath = strMainPath
         self.strDataset = strDataset
         self.strDatasetPath = os.path.join(self.strMainPath, self.strDataset)
@@ -23,6 +23,7 @@ class ImageModel():
         self.num_classes = len(self.lstClasses)
         self.intEpochs = epochs
         self.val_split = validation_split
+        self.lr = lr
     def loadDatasets(self):
         train_ds = tf.keras.preprocessing.image_dataset_from_directory(
             self.strDatasetPath,
@@ -126,7 +127,7 @@ class ImageModel():
         model = self.fnMakeModel()
 
         model.compile(
-            optimizer=keras.optimizers.Adam(1e-3),
+            optimizer=keras.optimizers.Adam(self.lr),
             loss=self.strLoss,
             metrics=["accuracy"],
         )

@@ -41,14 +41,14 @@ from imageswift import training
 projectPath = "path\\to\\project\\directory"
 dataset = "name_of_dataset_directory"
 
-model = training.ImageModel(projectPath, dataset, epochs=50, image_size=(150, 150), batch_size=32, validation_split=0.2)
+model = training.ImageModel(projectPath, dataset, epochs=50, image_size=(150, 150), batch_size=32, validation_split=0.2, lr=1e-3)
 model.loadDatasets()
 model.finishModel()
 ```
 
 The code above will save the the model and weights files to the project directory.
 
-This examples also shows the defaults for some training parameters: epochs, desired image size, batch size, and the percentage of your dataset to use for validation.
+This examples also shows the defaults for some training parameters: epochs, desired image size, batch size, the percentage of your dataset to use for validation, and the learning rate.
 
 ### Predicting
 
